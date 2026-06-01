@@ -117,4 +117,4 @@ pricing-analysis-skill/
 
 ## 適用產品
 
-BeautyPlus · BeautyCam · Meitu · Wink · 其他訂閱制 App（需調整 SKILL.md 的品牌名稱說明）
+影像类产品（需調整 SKILL.md 的品牌名稱說明）
