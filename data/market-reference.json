@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "description": "各市場 GDP 與購買力參考資料，供定價分析 Skill 使用。有新市場時補充進來，匯率因時效性請每次分析時即時查詢。",
+    "nominal_gdp_source": "IMF WEO 2026（April）",
+    "ppp_gdp_source": "World Bank 2024（台灣為 IMF 2024）",
+    "bigmac_source": "The Economist Big Mac Index 2026",
+    "world_bank_income_thresholds": {
+      "note": "依名目 GDP per capita（現值 USD）分級，固定門檻跨市場通用",
+      "HIC":  "> $13,845",
+      "UMIC": "$4,466 – $13,845",
+      "LMIC": "$1,146 – $4,466",
+      "LIC":  "< $1,146"
+    },
+    "last_updated": "2026-05-27"
+  },
+
+  "markets": {
+    "US": {
+      "name_zh": "美國",
+      "currency": "USD",
+      "nominal_gdp_usd": 94430,
+      "ppp_gdp_usd": 85810,
+      "bigmac_usd": 6.12,
+      "is_anchor": true
+    },
+    "UK": {
+      "name_zh": "英國",
+      "currency": "GBP",
+      "nominal_gdp_usd": 61056,
+      "ppp_gdp_usd": 60620,
+      "bigmac_usd": 7.08,
+      "note": "Big Mac Index +16% vs 美國"
+    },
+    "Germany": {
+      "name_zh": "德國",
+      "currency": "EUR",
+      "nominal_gdp_usd": 65303,
+      "ppp_gdp_usd": 65111,
+      "bigmac_usd": 7.31
+    },
+    "France": {
+      "name_zh": "法國",
+      "currency": "EUR",
+      "nominal_gdp_usd": 52083,
+      "ppp_gdp_usd": 55492,
+      "bigmac_usd": 7.37
+    },
+    "Taiwan": {
+      "name_zh": "台灣",
+      "currency": "TWD",
+      "nominal_gdp_usd": 42103,
+      "ppp_gdp_usd": 55274,
+      "bigmac_usd": 2.47
+    },
+    "SouthKorea": {
+      "name_zh": "韓國",
+      "currency": "KRW",
+      "nominal_gdp_usd": 37412,
+      "ppp_gdp_usd": 54080,
+      "bigmac_usd": 3.74
+    },
+    "Japan": {
+      "name_zh": "日本",
+      "currency": "JPY",
+      "nominal_gdp_usd": 35703,
+      "ppp_gdp_usd": 51685,
+      "bigmac_usd": 3.03
+    },
+    "Thailand": {
+      "name_zh": "泰國",
+      "currency": "THB",
+      "nominal_gdp_usd": 8105,
+      "ppp_gdp_usd": 21737,
+      "bigmac_usd": 4.30
+    },
+    "Indonesia": {
+      "name_zh": "印尼",
+      "currency": "IDR",
+      "nominal_gdp_usd": 5362,
+      "ppp_gdp_usd": 16080,
+      "bigmac_usd": 2.52
+    },
+    "India": {
+      "name_zh": "印度",
+      "currency": "INR",
+      "nominal_gdp_usd": 2813,
+      "ppp_gdp_usd": 9983,
+      "bigmac_usd": 2.51
+    },
+    "Spain": {
+      "name_zh": "西班牙",
+      "currency": "EUR",
+      "nominal_gdp_usd": 41563,
+      "ppp_gdp_usd": 56926,
+      "bigmac_usd": null,
+      "note": "nominal IMF WEO Apr 2026；PPP World Bank 2024；Big Mac 待補"
+    },
+    "SaudiArabia": {
+      "name_zh": "沙特阿拉伯",
+      "currency": "SAR",
+      "nominal_gdp_usd": 37811,
+      "ppp_gdp_usd": 71243,
+      "bigmac_usd": 5.06,
+      "note": "nominal IMF WEO Apr 2026；PPP World Bank 2024；USD/SAR fixed peg 1:3.75 since 1986"
+    },
+    "Turkey": {
+      "name_zh": "土耳其",
+      "currency": "TRY",
+      "nominal_gdp_usd": 19018,
+      "ppp_gdp_usd": 43932,
+      "bigmac_usd": 5.90,
+      "note": "nominal IMF WEO Apr 2026；PPP World Bank 2024；Big Mac ₺255（May 2026）；1 USD ≈ 45.9 TRY（2026-05-27）"
+    },
+    "Mexico": {
+      "name_zh": "墨西哥",
+      "currency": "MXN",
+      "nominal_gdp_usd": 15779,
+      "ppp_gdp_usd": 26643,
+      "bigmac_usd": 6.16,
+      "note": "nominal IMF WEO Apr 2026；PPP IMF WEO Apr 2026；Big Mac $6.16 USD（bigmacindex.app 2026，需再確認）；1 USD ≈ 17.30 MXN（2026-05-28）；首次升入 HIC（> $13,845）"
+    }
+  }
+}

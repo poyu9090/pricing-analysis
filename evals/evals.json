@@ -1,0 +1,23 @@
+{
+  "skill_name": "pricing-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "幫我做 BeautyCam 台灣市場的定價分析。\n\n產品：BeautyCam\n市場：台灣（TWD）\n美國錨定價（年訂閱）：$39.99 USD\n\n以下是台灣市場的競品定價資料（包年定價 / 2月活躍用戶數）：\n\n| APP | 包年定價 | MAU |\n|-----|---------|-----|\n| InShot | NT$590 | 134k |\n| SCRL | NT$590 | 40k |\n| Oldroll | NT$690 | 74k |\n| Kapi Cam | NT$690 | 20k |\n| Ulike | NT$710 | 21k |\n| Prequel | NT$790 | 9k |\n| Pisart (Plus) | NT$970 | 21k |\n| EPIK | NT$990 | 38k |\n| SODA | NT$990 | 20k |\n| Vivid Glam | NT$990 | 22k |\n| Faceapp | NT$1,000 | 3k |\n| BeautyCam | NT$1,190 | 431k |\n| B612 | NT$1,190 | 80k |\n| PhotoDirector | NT$1,190 | 42k |\n| PicCollage | NT$1,190 | 21k |\n| Remini Lite | NT$1,190 | 12k |\n| SNOW | NT$1,190 | 47k |\n| AI Mirror | NT$1,290 | 10k |\n| Glam AI | NT$1,290 | 4k |\n| Photoroom | NT$1,290 | 131k |\n| VSCO(plus) | NT$1,290 | 8k |\n| Meitu | NT$1,390 | 1502k |\n| BeautyPlus | NT$1,490 | 14k |\n| Lightroom | NT$1,490 | 79k |\n| Hypic | NT$1,790 | 141k |\n| Wink | NT$1,790 | 64k |\n| Airbrush | NT$1,990 | 0k |\n| Capcut standard | NT$2,290 | 1139k |\n| Retake AI | NT$2,290 | 27k |\n| Facetune | NT$2,490 | 7k |\n| Splice | NT$3,990 | 8k |\n\nBeautyCam 是自家產品（NT$1,190, 431k MAU）。",
+      "expected_output": "完整的 Markdown 報告，包含：(1) 先查詢並呈現台灣 GDP per capita (PPP)、美國 GDP per capita (PPP)、1 USD = TWD 匯率，計算 GDP 比率並請使用者確認；(2) 確認後產出：MAU 加權均價、BeautyCam PR 值、甜蜜點識別、GDP 理論價格區間（TWD 和 USD）、定位評估；(3) 具體調漲/維持/調降建議含建議新價與理由；(4) 存成 .md 檔案",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "幫我分析 BeautyPlus 日本市場定價，年訂閱跟月訂閱都有。\n\n產品：BeautyPlus\n市場：日本（JPY）\n美國錨定價（年訂閱）：$49.99 USD\n\n日本市場競品資料（年訂閱 / 月訂閱 / MAU）：\n\n| APP | 年訂閱 | 月訂閱 | MAU |\n|-----|--------|--------|-----|\n| SNOW | ¥4,800 | ¥600 | 280k |\n| Ulike | ¥5,500 | ¥800 | 85k |\n| Meitu | ¥6,000 | ¥900 | 420k |\n| BeautyCam | ¥6,500 | ¥900 | 310k |\n| B612 | ¥7,000 | ¥1,000 | 190k |\n| BeautyPlus | ¥7,800 | ¥980 | 62k |\n| Facetune | ¥9,800 | ¥1,500 | 18k |\n| Lightroom | ¥11,000 | ¥1,800 | 95k |\n| Remini | ¥11,800 | ¥1,500 | 48k |\n\nBeautyPlus 是自家產品（¥7,800 年訂閱 / ¥980 月訂閱，MAU 62k）。",
+      "expected_output": "完整的 Markdown 報告，特別包含：(1) 先查詢 GDP 與匯率數據請使用者確認；(2) 訂閱週期折扣比例分析表，計算 BeautyPlus 及各競品的年/月折扣率；(3) 若建議調價，說明各方案需同步調整的幅度以維持折扣比例一致性（偏移不超過 10 個百分點）；(4) 存成 .md 檔案",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我要做 Wink 的跨市場定價分析，幫我比較台灣跟泰國兩個市場。\n\n產品：Wink\n美國錨定價（年訂閱）：$59.99 USD\n\n【台灣市場（TWD）】競品資料（年訂閱 / MAU）：\n| APP | 年訂閱 | MAU |\n|-----|--------|-----|\n| InShot | NT$590 | 134k |\n| Meitu | NT$1,390 | 1502k |\n| BeautyCam | NT$1,190 | 431k |\n| SNOW | NT$1,190 | 47k |\n| Wink | NT$1,790 | 64k |\n| Hypic | NT$1,790 | 141k |\n| Facetune | NT$2,490 | 7k |\n| Capcut | NT$2,290 | 1139k |\n\n【泰國市場（THB）】競品資料（年訂閱 / MAU）：\n| APP | 年訂閱 | MAU |\n|-----|--------|-----|\n| SNOW | ฿590 | 95k |\n| BeautyCam | ฿690 | 210k |\n| Ulike | ฿790 | 55k |\n| Meitu | ฿890 | 380k |\n| Wink | ฿990 | 28k |\n| B612 | ฿790 | 120k |\n| Facetune | ฿1,290 | 8k |\n| Capcut | ฿1,290 | 680k |\n\nWink 是自家產品（台灣 NT$1,790 / 泰國 ฿990）。",
+      "expected_output": "HTML 報告檔案（含圖表），包含：(1) 分別查詢台灣和泰國的 GDP 與匯率數據，請使用者確認；(2) 兩個市場各自的完整分析（PR 值、MAU 加權均價、GDP 理論區間）；(3) 跨市場 USD 比較表，標示兩個市場的建議方向與調整幅度；(4) 執行摘要讓主管快速掌握結論",
+      "files": []
+    }
+  ]
+}

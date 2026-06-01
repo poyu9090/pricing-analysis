@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeautyCam 英国市场定价分析 2026-05-26</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; background: #F0F2F5; color: #1A1A2E; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+    .header { background: linear-gradient(135deg, #1A1A2E 0%, #2D2D5E 100%); color: white; padding: 32px; border-radius: 16px; margin-bottom: 24px; }
+    .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .header .sub { font-size: 13px; opacity: 0.6; margin-bottom: 28px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .kpi { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; }
+    .kpi-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.6; margin-bottom: 6px; }
+    .kpi-value { font-size: 24px; font-weight: 700; line-height: 1; }
+    .kpi-sub { font-size: 12px; opacity: 0.5; margin-top: 4px; }
+
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 5px; font-size: 12px; font-weight: 600; letter-spacing: 0.3px; }
+    .badge-discount { background: #EF5350; color: white; }
+
+    .card { background: white; border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .card-title { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .card-sub { font-size: 12px; color: #888; margin-bottom: 18px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+
+    .toggle-row { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+    .toggle-label { font-size: 12px; color: #888; margin-right: 4px; }
+    .toggle-group { display: flex; gap: 6px; }
+    .toggle-btn { padding: 5px 14px; border-radius: 20px; border: 1.5px solid #DDD; background: white; cursor: pointer; font-size: 12px; font-weight: 500; color: #555; transition: all 0.15s; }
+    .toggle-btn:hover { border-color: #999; }
+    .toggle-btn.active { background: #1A1A2E; border-color: #1A1A2E; color: white; }
+
+    .legend-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+    .legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #666; }
+    .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .leg-line { width: 18px; height: 0; border-top: 2.5px dashed; flex-shrink: 0; }
+
+    .gdp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .gdp-item { background: #F8F9FA; border-radius: 10px; padding: 16px; text-align: center; }
+    .gdp-label { font-size: 11px; color: #888; margin-bottom: 6px; }
+    .gdp-value { font-size: 20px; font-weight: 700; }
+
+    .rec-box { border: 1.5px solid #A5D6A7; background: #F1F8F2; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .rec-title { font-size: 13px; font-weight: 700; color: #2E7D32; margin-bottom: 14px; }
+    .rec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+    .rec-item { background: white; border-radius: 8px; padding: 12px; text-align: center; }
+    .rec-item-label { font-size: 11px; color: #888; margin-bottom: 4px; }
+    .rec-item-value { font-size: 20px; font-weight: 700; }
+    .rec-item-sub { font-size: 11px; color: #aaa; margin-top: 2px; }
+    .rec-reason { font-size: 13px; color: #444; line-height: 1.65; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #F5F5F5; padding: 9px 12px; text-align: left; font-weight: 600; font-size: 11px; color: #666; border-bottom: 2px solid #EEE; text-transform: uppercase; letter-spacing: 0.3px; }
+    td { padding: 8px 12px; border-bottom: 1px solid #F5F5F5; }
+    tr.own { background: #FFF3F7; font-weight: 600; }
+    tr.capcut-row { background: #F3F3FF; }
+    tr:hover { background: #FAFAFA; }
+    tr.own:hover { background: #FFE8F0; }
+
+    .info-tip { position: relative; display: inline-flex; align-items: center; margin-left: 5px; cursor: default; }
+    .info-tip .icon { width: 15px; height: 15px; border-radius: 50%; background: #DDD; color: #666; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; user-select: none; }
+    .info-tip .icon:hover { background: #1A1A2E; color: white; }
+    .info-tip .popup {
+      display: none; position: absolute; left: 22px; top: 50%; transform: translateY(-50%);
+      background: #1A1A2E; color: white; border-radius: 10px; padding: 14px 16px;
+      width: 280px; font-size: 12px; line-height: 1.7; z-index: 99;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .info-tip .popup::before { content:''; position:absolute; left:-6px; top:50%; transform:translateY(-50%); border:6px solid transparent; border-right-color:#1A1A2E; border-left:none; }
+    .info-tip:hover .popup { display: block; }
+    .info-tip .popup ol { padding-left: 16px; margin-top: 6px; }
+    .info-tip .popup li { margin-bottom: 3px; }
+    .info-tip .popup .note { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); font-size: 11px; }
+
+    @media (max-width: 768px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-2 { grid-template-columns: 1fr; }
+      .gdp-grid { grid-template-columns: repeat(2, 1fr); }
+      .rec-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>BeautyCam 英国市场定价分析</h1>
+    <p class="sub">2026-05-26 &nbsp;|&nbsp; iOS 4 月 MAU &nbsp;|&nbsp; 币别：GBP &nbsp;|&nbsp; 汇率：1 USD = £0.7404</p>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:20px;" id="summary-metrics"></div>
+  </div>
+
+  <!-- Scoring Model Card -->
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-title">定价决策评分</div>
+    <div class="card-sub">4 项指标加权评分，决定是否调涨 · ≥ 70 调涨 · 40~69 维持 · &lt; 40 调降</div>
+
+    <!-- Module tiles -->
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:20px;">
+      <div style="background:#EEF2FF; border-radius:10px; padding:14px;">
+        <div style="font-size:10px; color:#5C6BC0; font-weight:700; letter-spacing:0.4px; margin-bottom:6px;">M1 · 权重 40%</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:6px; color:#1A237E;">竞品定位缺口</div>
+        <div style="font-size:11px; color:#555; line-height:1.65;">BeautyCam 在市场中偏便宜还是贵？只看简单四分位分数。</div>
+        <div style="margin-top:8px; padding-top:8px; border-top:1px solid rgba(92,107,192,0.15); font-size:10px; color:#888; line-height:1.8;">&lt; Q1 → 100&ensp;/&ensp;Q1~Q2 → 70&ensp;/&ensp;Q2~Q3 → 40&ensp;/&ensp;&gt; Q3 → 10</div>
+      </div>
+      <div style="background:#E8F5E9; border-radius:10px; padding:14px;">
+        <div style="font-size:10px; color:#388E3C; font-weight:700; letter-spacing:0.4px; margin-bottom:6px;">M2 · 权重 25%</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:6px; color:#1B5E20;">市场类型（GDP）</div>
+        <div style="font-size:11px; color:#555; line-height:1.65;">依世界银行人均名目 GDP 分级（高所得 / 中高所得 / 中低所得 / 低所得），等级越高定价空间越大。</div>
+        <div style="margin-top:8px; padding-top:8px; border-top:1px solid rgba(56,142,60,0.15); font-size:10px; color:#888; line-height:1.8;">高所得 → 100&ensp;/&ensp;中高所得 → 60&ensp;/&ensp;中低所得 → 20&ensp;/&ensp;低所得 → 0（Hard Gate）</div>
+      </div>
+      <div style="background:#FFF8E1; border-radius:10px; padding:14px;">
+        <div style="font-size:10px; color:#F57F17; font-weight:700; letter-spacing:0.4px; margin-bottom:6px;">M4 · 权重 15%</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:6px; color:#E65100;">MAU 定价一致性</div>
+        <div style="font-size:11px; color:#555; line-height:1.65;">MAU 比 BeautyCam 低的竞品中，有多少比例定价更高？比例越高 = 调涨空间越大。</div>
+        <div style="margin-top:8px; padding-top:8px; border-top:1px solid rgba(245,127,23,0.15); font-size:10px; color:#888; line-height:1.8;">比例 × 100 = 得分（0~100）</div>
+      </div>
+      <div style="background:#FCE4EC; border-radius:10px; padding:14px;">
+        <div style="font-size:10px; color:#C2185B; font-weight:700; letter-spacing:0.4px; margin-bottom:6px;">M5 · 权重 20%</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:6px; color:#880E4F;">美图旗下关系</div>
+        <div style="font-size:11px; color:#555; line-height:1.65;">BeautyCam 与同市场 Meitu app 的定价差距，差距越大 = 品牌内部不一致 = 调涨信号越强。</div>
+        <div style="margin-top:8px; padding-top:8px; border-top:1px solid rgba(194,24,91,0.15); font-size:10px; color:#888; line-height:1.8;">&gt; 20% → 100&ensp;/&ensp;10~20% → 80&ensp;/&ensp;5~10% → 60&ensp;/&ensp;&lt; 5% → 30</div>
+      </div>
+    </div>
+
+    <!-- Score table -->
+    <table style="margin-bottom:20px;">
+      <thead>
+        <tr>
+          <th>模块</th>
+          <th style="width:55px;">权重</th>
+          <th>英国指标依据</th>
+          <th style="width:55px; text-align:center;">得分</th>
+          <th style="width:65px; text-align:right;">加权分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>M1 竞品定位缺口</strong></td>
+          <td>40%</td>
+          <td style="font-size:12px; color:#555;">简单四分位 &lt; Q1（Q1=£34.99）→ 最低分位</td>
+          <td style="text-align:center; font-weight:700; color:#1565C0; font-size:15px;">100</td>
+          <td style="text-align:right; font-weight:600;">40.0</td>
+        </tr>
+        <tr>
+          <td><strong>M2 市场类型</strong></td>
+          <td>25%</td>
+          <td style="font-size:12px; color:#555;">英国人均名目 GDP $61,056，超过高所得门槛 $13,845 → 高所得市场</td>
+          <td style="text-align:center; font-weight:700; color:#1565C0; font-size:15px;">100</td>
+          <td style="text-align:right; font-weight:600;">25.0</td>
+        </tr>
+        <tr>
+          <td><strong>M4 MAU 定价一致性</strong></td>
+          <td>15%</td>
+          <td style="font-size:12px; color:#555;">MAU 更低的 4 款（Splice / SNOW / B612 / Dazz Cam）中，3 款定价高于 £33.99 → 75%</td>
+          <td style="text-align:center; font-weight:700; color:#1565C0; font-size:15px;">75</td>
+          <td style="text-align:right; font-weight:600;">11.3</td>
+        </tr>
+        <tr>
+          <td><strong>M5 美图旗下关系</strong></td>
+          <td>20%</td>
+          <td style="font-size:12px; color:#555;">BeautyCam £33.99 低于 Meitu £37.99，差距 10.5% → 落在 10~20% 区间</td>
+          <td style="text-align:center; font-weight:700; color:#1565C0; font-size:15px;">80</td>
+          <td style="text-align:right; font-weight:600;">16.0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Final score -->
+    <div style="background:#1A1A2E; border-radius:12px; padding:20px 24px; display:flex; align-items:center; gap:28px;">
+      <div style="flex:0 0 auto; text-align:center; min-width:80px;">
+        <div style="font-size:10px; color:rgba(255,255,255,0.45); margin-bottom:4px; letter-spacing:0.3px; text-transform:uppercase;">综合评分</div>
+        <div style="font-size:52px; font-weight:800; color:#66BB6A; line-height:1; letter-spacing:-2px;">92.3</div>
+        <div style="font-size:10px; color:rgba(255,255,255,0.3); margin-top:3px;">/ 100</div>
+      </div>
+      <div style="flex:1;">
+        <div style="position:relative; height:10px; background:rgba(255,255,255,0.1); border-radius:5px; margin-bottom:6px;">
+          <div style="position:absolute; left:0; top:0; height:100%; width:92.3%; background:linear-gradient(90deg,#43A047,#66BB6A); border-radius:5px;"></div>
+          <div style="position:absolute; left:40%; top:-3px; height:16px; width:1.5px; background:rgba(255,255,255,0.25);"></div>
+          <div style="position:absolute; left:70%; top:-3px; height:16px; width:1.5px; background:rgba(255,255,255,0.55);"></div>
+        </div>
+        <div style="display:grid; grid-template-columns:40fr 30fr 30fr; font-size:10px; color:rgba(255,255,255,0.35); margin-bottom:14px; text-align:center;">
+          <span>调降 &lt; 40</span>
+          <span>维持 40~69</span>
+          <span>调涨 ≥ 70</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+          <span style="background:#43A047; color:white; font-size:14px; font-weight:700; padding:7px 18px; border-radius:8px;">建议：调涨</span>
+          <span style="font-size:12px; color:rgba(255,255,255,0.55);">综合评分 92.3 ≥ 门槛 70，4 项指标均支持调涨，无 Hard Gate 触发</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rec box (below header) -->
+  <div class="card" style="margin-bottom:24px;">
+    <div class="rec-box">
+      <div class="rec-title">建议：年订阅调涨 +11.77%</div>
+      <div class="rec-grid">
+        <div class="rec-item">
+          <div class="rec-item-label">现行价</div>
+          <div class="rec-item-value">£33.99</div>
+          <div class="rec-item-sub">$45.93 USD</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-item-label">建议新价</div>
+          <div class="rec-item-value" style="color:#E91E8C;">£37.99</div>
+          <div class="rec-item-sub">$51.32 USD &nbsp;+$5.39</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-item-label">月订阅</div>
+          <div class="rec-item-value">£6.99</div>
+          <div class="rec-item-sub">维持不变</div>
+        </div>
+      </div>
+      <div class="rec-reason">
+        英国为高购买力市场（GDP 比率 70.6%），具备调涨空间。BeautyCam 现价低于直接竞品 EPIK（£34.99）、Remini（£34.99），亦低于同集团 Meitu app（£37.99）。调至 £37.99 后简单四分位升至 Q1~Q2（Q1 £34.99 / Q2 £44.99），MAU 加权仍 &lt; Q1（Q1 £85.99）。月订阅维持 £6.99，年比月省由 59.5% 调整至 54.7%（-4.8pp），仍高于竞品均值 50.0%。
+      </div>
+    </div>
+
+    <!-- 市场价格四分位 -->
+    <div style="margin-bottom:20px; padding:14px 16px; background:#F8F9FA; border-radius:10px;">
+      <div style="font-size:12px; font-weight:600; color:#666; margin-bottom:10px;">市场价格四分位（简单，含 CapCut，23 款）</div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+        <div style="background:white; border:1.5px solid #E91E8C; border-radius:8px; padding:10px 12px;">
+          <div style="font-size:10px; color:#888; margin-bottom:3px;">低于 Q1</div>
+          <div style="font-size:13px; font-weight:700; color:#333;">&lt; £34.99</div>
+          <div style="margin-top:7px;">
+            <span style="background:#FFEDF5; color:#E91E8C; font-size:10px; font-weight:600; padding:2px 7px; border-radius:4px;">★ 调前 £33.99</span>
+          </div>
+        </div>
+        <div style="background:white; border:1.5px solid #4CAF50; border-radius:8px; padding:10px 12px;">
+          <div style="font-size:10px; color:#888; margin-bottom:3px;">Q1 ~ Q2</div>
+          <div style="font-size:13px; font-weight:700; color:#333;">£34.99 ~ £44.99</div>
+          <div style="margin-top:7px;">
+            <span style="background:#E8F5E9; color:#2E7D32; font-size:10px; font-weight:600; padding:2px 7px; border-radius:4px;">★ 调后 £37.99</span>
+          </div>
+        </div>
+        <div style="background:white; border:1.5px solid #EEE; border-radius:8px; padding:10px 12px;">
+          <div style="font-size:10px; color:#888; margin-bottom:3px;">Q2 ~ Q3</div>
+          <div style="font-size:13px; font-weight:700; color:#333;">£44.99 ~ £64.99</div>
+        </div>
+        <div style="background:white; border:1.5px solid #EEE; border-radius:8px; padding:10px 12px;">
+          <div style="font-size:10px; color:#888; margin-bottom:3px;">高于 Q3</div>
+          <div style="font-size:13px; font-weight:700; color:#333;">&gt; £64.99</div>
+        </div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>方案</th><th>建议</th><th>幅度</th><th>建议新价</th><th>USD 等值</th>
+          <th>年比月省（调前→调后）</th><th>四分位（简单）</th><th>四分位（MAU 加权）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>年订阅</td>
+          <td style="color:#E91E8C; font-weight:600;">调涨</td>
+          <td>+11.77%</td>
+          <td><strong>£37.99</strong></td>
+          <td>$51.32</td>
+          <td>59.5% → 54.7% <span style="color:#999; font-size:11px;">(-4.8pp)</span></td>
+          <td>< Q1 → Q1~Q2 <span style="color:#999; font-size:11px;">(Q1 £34.99)</span></td>
+          <td>< Q1 → < Q1 <span style="color:#999; font-size:11px;">(Q1 £85.99)</span></td>
+        </tr>
+        <tr>
+          <td>月订阅</td>
+          <td style="color:#888;">维持</td>
+          <td>—</td><td>£6.99</td><td>$9.44</td><td>—</td><td>—</td><td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="height:20px;"></div>
+    <div style="font-size:13px; font-weight:700; color:#444; margin-bottom:10px;">美图旗下产品年月价格对比（调整后）</div>
+    <table>
+      <thead>
+        <tr>
+          <th>产品</th>
+          <th>年订阅</th>
+          <th>月订阅</th>
+          <th>MAU</th>
+          <th>年比月省（调后）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="own">
+          <td>★ BeautyCam</td>
+          <td>£33.99 → <strong style="color:#E91E8C;">£37.99</strong> <span style="font-size:11px; color:#999;">(+11.77%)</span></td>
+          <td>£6.99</td>
+          <td>21,516</td>
+          <td>54.7% <span style="font-size:11px; color:#999;">（原 59.5%，-4.8pp）</span></td>
+        </tr>
+        <tr>
+          <td>Meitu</td>
+          <td>£37.99</td>
+          <td>£7.99</td>
+          <td>56,262</td>
+          <td>60.4%</td>
+        </tr>
+        <tr>
+          <td>BeautyPlus</td>
+          <td>£54.99</td>
+          <td>£10.99</td>
+          <td>25,914</td>
+          <td>58.3%</td>
+        </tr>
+        <tr>
+          <td>Wink</td>
+          <td>£54.99</td>
+          <td>—（周 £8.00）</td>
+          <td>49,953</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MAU vs 定价象限图 -->
+  <div class="card">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+      <div class="card-title" style="margin-bottom:0;">MAU / 定价 竞品关系</div>
+      <div style="display:flex; align-items:center; gap:6px;">
+        <span class="toggle-label">方案</span>
+        <div class="toggle-group">
+          <button class="toggle-btn active" data-period="annual" onclick="setPeriod('annual',this)">年</button>
+          <button class="toggle-btn" data-period="monthly" onclick="setPeriod('monthly',this)">月</button>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative; height:420px;">
+      <canvas id="scatterChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Chart 1: Price Bar -->
+  <div class="card">
+    <div class="card-title" id="price-chart-title">竞品年订阅定价分布</div>
+    <div class="card-sub" id="price-chart-sub">依年订阅价由低到高排序｜垂直线为四分位基准</div>
+    <div style="display:flex; gap:20px; align-items:stretch; margin-bottom:14px;">
+      <!-- Left: toggles + legend -->
+      <div style="flex:0 0 auto;">
+        <div class="toggle-row" style="margin-bottom:10px;">
+          <div style="display:flex; align-items:center;">
+            <span class="toggle-label">方案</span>
+            <div class="toggle-group">
+              <button class="toggle-btn active" data-period="annual" onclick="setPeriod('annual',this)">年</button>
+              <button class="toggle-btn" data-period="monthly" onclick="setPeriod('monthly',this)">月</button>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center;">
+            <span class="toggle-label">竞品范围</span>
+            <div class="toggle-group" id="grp-capcut">
+              <button class="toggle-btn active" onclick="setCapcut(false,this)">不含 CapCut</button>
+              <button class="toggle-btn" onclick="setCapcut(true,this)">含 CapCut</button>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center;">
+            <span class="toggle-label">四分位</span>
+            <div class="toggle-group" id="grp-qmode">
+              <button class="toggle-btn active" onclick="setQMode('simple',this)">简单</button>
+              <button class="toggle-btn" onclick="setQMode('mauWeighted',this)">MAU 加权</button>
+            </div>
+          </div>
+        </div>
+        <div class="legend-row" style="margin-bottom:0;">
+          <div class="legend-item"><div class="leg-dot" style="background:#E91E8C"></div>BeautyCam</div>
+          <div class="legend-item"><div class="leg-dot" style="background:#FF6B35"></div>美图旗下</div>
+          <div class="legend-item"><div class="leg-dot" style="background:#B0BEC5"></div>CapCut</div>
+          <div class="legend-item"><div class="leg-dot" style="background:#B0BEC5"></div>其他竞品</div>
+          <div class="legend-item"><div class="leg-line" style="border-color:#4CAF50"></div>Q1</div>
+          <div class="legend-item"><div class="leg-line" style="border-color:#FF9800"></div>Q2</div>
+          <div class="legend-item"><div class="leg-line" style="border-color:#F44336"></div>Q3</div>
+          <div class="legend-item" style="color:#999; font-style:italic;">标注 MAU 前 5 名</div>
+        </div>
+      </div>
+      <!-- Right: MAU explain panel (shown only in MAU mode) -->
+      <div id="mau-explain" style="display:none; flex:1; background:#F8F9FA; border-radius:12px; padding:14px 18px; border:1.5px solid #EEE;">
+        <div style="font-size:11px; color:#888; margin-bottom:10px;">
+          依价格排序后累積 MAU，跨过 25% / 50% / 75% 门槛时的定价点｜总 MAU：<strong id="mau-total">—</strong>
+        </div>
+        <div style="display:flex; gap:10px; margin-bottom:10px;">
+          <div style="flex:1; background:white; border-radius:8px; padding:10px 12px; border-top:3px solid #4CAF50;">
+            <div style="font-size:10px; color:#4CAF50; font-weight:700; margin-bottom:4px;">Q1（门槛 25%）</div>
+            <div style="font-size:18px; font-weight:700;" id="mau-q1-price">—</div>
+            <div style="font-size:11px; color:#999; margin-top:2px;" id="mau-q1-note">—</div>
+          </div>
+          <div style="flex:1; background:white; border-radius:8px; padding:10px 12px; border-top:3px solid #FF9800;">
+            <div style="font-size:10px; color:#FF9800; font-weight:700; margin-bottom:4px;">Q2（门槛 50%）</div>
+            <div style="font-size:18px; font-weight:700;" id="mau-q2-price">—</div>
+            <div style="font-size:11px; color:#999; margin-top:2px;" id="mau-q2-note">—</div>
+          </div>
+          <div style="flex:1; background:white; border-radius:8px; padding:10px 12px; border-top:3px solid #F44336;">
+            <div style="font-size:10px; color:#F44336; font-weight:700; margin-bottom:4px;">Q3（门槛 75%）</div>
+            <div style="font-size:18px; font-weight:700;" id="mau-q3-price">—</div>
+            <div style="font-size:11px; color:#999; margin-top:2px;" id="mau-q3-note">—</div>
+          </div>
+        </div>
+        <div style="font-size:11px; color:#AAA;">
+          简单四分位（每款 app 等权）：Q1 <span id="s-q1">—</span>&ensp;/&ensp;Q2 <span id="s-q2">—</span>&ensp;/&ensp;Q3 <span id="s-q3">—</span>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative; height:640px;">
+      <canvas id="priceChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Discount -->
+  <div class="card">
+    <div class="card-title">年 vs 月订阅：订年省多少</div>
+    <div class="card-sub">（月订阅 − 年订阅月均）÷ 月订阅｜僅含同时提供年＋月方案的竞品（共 15 款）｜越高 = 选年方案省越多</div>
+    <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+      <div style="font-size:11px; color:#999; display:flex; align-items:center; gap:4px;">
+        <span style="display:inline-block; width:16px; border-top:2px dashed #FF9800;"></span>
+        竞品均值 50.0%
+      </div>
+    </div>
+    <div style="position:relative; height:360px;">
+      <canvas id="discountChart"></canvas>
+    </div>
+  </div>
+
+  <!-- GDP / PPP — 兩个模組 -->
+  <div class="grid-2" style="margin-bottom:24px;">
+    <!-- Module 1: 人均 GDP（名目） -->
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-title">人均 GDP（名目）</div>
+      <div class="card-sub">名目 GDP per capita（现值 USD）｜★ 本次市场｜来源：<a href="https://www.imf.org/en/Publications/WEO" target="_blank" style="color:inherit; text-decoration:underline; opacity:0.75;">IMF WEO 2026 ↗</a></div>
+      <div style="position:relative; height:280px;">
+        <canvas id="nominalGdpChart"></canvas>
+      </div>
+    </div>
+    <!-- Module 2: Big Mac Index -->
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-title">购買力（Big Mac Index）</div>
+      <div class="card-sub">Big Mac 售价（USD）｜垂直线 = 美国基准 $6.12｜来源：<a href="https://www.economist.com/big-mac-index" target="_blank" style="color:inherit; text-decoration:underline; opacity:0.75;">The Economist 2026 ↗</a></div>
+      <div style="position:relative; height:280px;">
+        <canvas id="bigmacChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full Table -->
+  <div class="card">
+    <div class="card-title">完整竞品定价资料</div>
+    <div class="card-sub">★ 自家产品 | iOS 4 月 MAU</div>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr><th>竞品</th><th>年订阅 (GBP)</th><th>月订阅</th><th>周订阅</th><th>MAU</th><th>年订阅 (USD)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="own"><td>★ BeautyCam</td><td>£33.99</td><td>£6.99</td><td>—</td><td>21,516</td><td>$45.93</td></tr>
+          <tr class="capcut-row" style="opacity:0.5;"><td>CapCut（标准）<span style="font-size:10px; color:#999; font-weight:400;"> 不采用</span></td><td>£119.99</td><td>£13.99</td><td>—</td><td>4,328,589</td><td>$162.08</td></tr>
+          <tr class="capcut-row"><td>CapCut（已登入）<span style="font-size:10px; color:#5C6BC0; font-weight:400;"> ★ 分析采用</span></td><td>£99.99</td><td>£10.99</td><td>—</td><td>4,328,589</td><td>$135.06</td></tr>
+          <tr><td>Canva</td><td>£100.00</td><td>£13.00</td><td>—</td><td>1,655,662</td><td>$135.06</td></tr>
+          <tr><td>Picsart</td><td>£85.99</td><td>—</td><td>£9.99</td><td>617,406</td><td>$116.13</td></tr>
+          <tr><td>InShot</td><td>£19.99</td><td>£4.99</td><td>—</td><td>416,049</td><td>$27.00</td></tr>
+          <tr><td>Lightroom</td><td>£43.99</td><td>£6.99</td><td>—</td><td>376,989</td><td>$59.41</td></tr>
+          <tr><td>FaceApp</td><td>£35.00</td><td>£7.00</td><td>—</td><td>249,988</td><td>$47.27</td></tr>
+          <tr><td>Snapseed</td><td>—</td><td>—</td><td>—</td><td>260,448</td><td>—</td></tr>
+          <tr><td>Retake</td><td>—</td><td>—</td><td>£8.99</td><td>204,454</td><td>—</td></tr>
+          <tr><td>SCRL</td><td>£44.99</td><td>£4.99</td><td>—</td><td>124,137</td><td>$60.76</td></tr>
+          <tr><td>EPIK</td><td>£34.99</td><td>£6.99</td><td>—</td><td>121,913</td><td>$47.27</td></tr>
+          <tr><td>Facetune</td><td>£59.99</td><td>—</td><td>£11.99</td><td>119,252</td><td>$81.03</td></tr>
+          <tr><td>Photoroom</td><td>£69.99</td><td>£9.99</td><td>—</td><td>117,232</td><td>$94.54</td></tr>
+          <tr><td>Hypic</td><td>£55.99</td><td>£8.99</td><td>—</td><td>109,576</td><td>$75.63</td></tr>
+          <tr><td>Remini</td><td>£34.99</td><td>—</td><td>£4.99</td><td>91,691</td><td>$47.27</td></tr>
+          <tr><td>Prequel</td><td>£29.99</td><td>—</td><td>£2.99</td><td>86,083</td><td>$40.52</td></tr>
+          <tr><td>Glam AI</td><td>£49.99</td><td>—</td><td>£8.99</td><td>78,409</td><td>$67.53</td></tr>
+          <tr><td>Meitu</td><td>£37.99</td><td>£7.99</td><td>£4.99</td><td>56,262</td><td>$51.32</td></tr>
+          <tr><td>Wink</td><td>£54.99</td><td>—</td><td>£8.00</td><td>49,953</td><td>$74.27</td></tr>
+          <tr><td>VSCO</td><td>£69.99</td><td>£14.99</td><td>—</td><td>45,955</td><td>$94.54</td></tr>
+          <tr><td>BeautyPlus</td><td>£54.99</td><td>£10.99</td><td>—</td><td>25,914</td><td>$74.27</td></tr>
+          <tr><td>Splice</td><td>£119.99</td><td>—</td><td>£9.99</td><td>20,873</td><td>$162.08</td></tr>
+          <tr><td>SNOW</td><td>£39.99</td><td>£6.99</td><td>—</td><td>7,612</td><td>$54.02</td></tr>
+          <tr><td>B612</td><td>£39.99</td><td>£6.99</td><td>—</td><td>7,579</td><td>$54.02</td></tr>
+          <tr><td>Dazz Cam</td><td>£6.99</td><td>—</td><td>—</td><td>15,138</td><td>$9.44</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+<script>
+const ALL = [
+  { name:'Dazz Cam',   price:6.99,   monthly:null,  mau:15138,   cat:'other' },
+  { name:'InShot',     price:19.99,  monthly:4.99,  mau:416049,  cat:'other' },
+  { name:'Prequel',    price:29.99,  monthly:null,  mau:86083,   cat:'other' },
+  { name:'BeautyCam',  price:33.99,  monthly:6.99,  mau:21516,   cat:'own'   },
+  { name:'Remini',     price:34.99,  monthly:null,  mau:91691,   cat:'other' },
+  { name:'EPIK',       price:34.99,  monthly:6.99,  mau:121913,  cat:'other' },
+  { name:'FaceApp',    price:35.00,  monthly:7.00,  mau:249988,  cat:'other' },
+  { name:'Meitu',      price:37.99,  monthly:7.99,  mau:56262,   cat:'meitu' },
+  { name:'B612',       price:39.99,  monthly:6.99,  mau:7579,    cat:'other' },
+  { name:'SNOW',       price:39.99,  monthly:6.99,  mau:7612,    cat:'other' },
+  { name:'Lightroom',  price:43.99,  monthly:6.99,  mau:376989,  cat:'other' },
+  { name:'SCRL',       price:44.99,  monthly:4.99,  mau:124137,  cat:'other' },
+  { name:'Glam AI',    price:49.99,  monthly:null,  mau:78409,   cat:'other' },
+  { name:'Wink',       price:54.99,  monthly:null,  mau:49953,   cat:'meitu' },
+  { name:'BeautyPlus', price:54.99,  monthly:10.99, mau:25914,   cat:'meitu' },
+  { name:'Hypic',      price:55.99,  monthly:8.99,  mau:109576,  cat:'other' },
+  { name:'Facetune',   price:59.99,  monthly:null,  mau:119252,  cat:'other' },
+  { name:'Photoroom',  price:69.99,  monthly:9.99,  mau:117232,  cat:'other' },
+  { name:'VSCO',       price:69.99,  monthly:14.99, mau:45955,   cat:'other' },
+  { name:'Picsart',    price:85.99,  monthly:null,  mau:617406,  cat:'other' },
+  { name:'Canva',      price:100.00, monthly:13.00, mau:1655662, cat:'other' },
+  { name:'CapCut',     price:99.99,  monthly:10.99, mau:4328589, cat:'capcut'},
+  { name:'Splice',     price:119.99, monthly:null,  mau:20873,   cat:'other' },
+];
+
+const Q = {
+  withCapcut: {
+    simple:      { q1:34.99, q2:44.99, q3:64.99 },
+    mauWeighted: { q1:85.99, q2:99.99, q3:99.99  }
+  },
+  noCapcut: {
+    simple:      { q1:34.99, q2:44.49, q3:58.99 },
+    mauWeighted: { q1:43.99, q2:85.99, q3:100.00 }
+  }
+};
+
+// 年比月省多少：(月订阅 − 年订阅/12) ÷ 月订阅，僅含同时有年＋月方案的 15 款 app
+const DISC = [
+  { name:'SCRL',       savings:24.9, mau:124137,  cat:'other'  },
+  { name:'CapCut',     savings:24.2, mau:4328589, cat:'capcut' },
+  { name:'Canva',      savings:35.9, mau:1655662, cat:'other'  },
+  { name:'Photoroom',  savings:41.6, mau:117232,  cat:'other'  },
+  { name:'Lightroom',  savings:47.6, mau:376989,  cat:'other'  },
+  { name:'Hypic',      savings:48.1, mau:109576,  cat:'other'  },
+  { name:'SNOW',       savings:52.3, mau:7612,    cat:'other'  },
+  { name:'B612',       savings:52.3, mau:7579,    cat:'other'  },
+  { name:'EPIK',       savings:58.3, mau:121913,  cat:'other'  },
+  { name:'FaceApp',    savings:58.3, mau:249988,  cat:'other'  },
+  { name:'BeautyPlus', savings:58.3, mau:25914,   cat:'meitu'  },
+  { name:'BeautyCam',  savings:59.5, mau:21516,   cat:'own'    },
+  { name:'Meitu',      savings:60.4, mau:56262,   cat:'meitu'  },
+  { name:'VSCO',       savings:61.1, mau:45955,   cat:'other'  },
+  { name:'InShot',     savings:66.6, mau:416049,  cat:'other'  },
+];
+
+// 简单四分位（15 apps 等权，interpolation）：Q1=44.6 / Q2=52.3 / Q3=58.9
+const Q_DISC = {
+  simple: { q1:44.6, q2:52.3, q3:58.9 },
+};
+
+const COL = {
+  own:    (a=1) => `rgba(233,30,140,${a})`,
+  meitu:  (a=1) => `rgba(255,107,53,${a})`,
+  capcut: (a=1) => `rgba(92,107,192,${a})`,
+  other:  (a=1) => `rgba(144,164,174,${a})`,
+};
+
+// ── Custom inline plugin: Q lines + price labels for highlighted bars ──
+function pillRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.arcTo(x + w, y, x + w, y + r, r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+  ctx.lineTo(x + r, y + h);
+  ctx.arcTo(x, y + h, x, y + h - r, r);
+  ctx.lineTo(x, y + r);
+  ctx.arcTo(x, y, x + r, y, r);
+  ctx.closePath();
+}
+
+function makeDiscPlugin(labelBars, allData) {
+  return {
+    id: 'discLocal_' + Date.now(),
+    afterDatasetsDraw(chart) {
+      const { ctx, scales: { y }, chartArea: { left, right } } = chart;
+
+      // Avg line
+      const avgPx = y.getPixelForValue(50.0);
+      ctx.save();
+      ctx.beginPath(); ctx.moveTo(left, avgPx); ctx.lineTo(right, avgPx);
+      ctx.strokeStyle = '#FF9800'; ctx.lineWidth = 1.5; ctx.setLineDash([5, 4]); ctx.stroke(); ctx.setLineDash([]);
+      ctx.restore();
+
+      const meta = chart.getDatasetMeta(0);
+
+      // 其他竞品：小字淡色
+      allData.forEach((d, idx) => {
+        if (d.cat === 'own' || d.cat === 'meitu') return;
+        const bar = meta.data[idx];
+        if (!bar) return;
+        const value = chart.data.datasets[0].data[idx];
+        ctx.save();
+        ctx.font = '9px -apple-system,sans-serif';
+        ctx.fillStyle = 'rgba(140,140,140,0.65)';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+        ctx.fillText(value + '%', bar.x, y.getPixelForValue(value) - 2);
+        ctx.restore();
+      });
+
+      // 自家 / 美图旗下：粗体显色
+      labelBars.forEach(({ idx, color }) => {
+        const bar = meta.data[idx];
+        if (!bar) return;
+        const value = chart.data.datasets[0].data[idx];
+        ctx.save();
+        ctx.font = 'bold 11px -apple-system,sans-serif';
+        ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+        ctx.fillText(value + '%', bar.x, y.getPixelForValue(value) - 4);
+        ctx.restore();
+      });
+    }
+  };
+}
+
+const MAU_EXPLAIN = {
+  withCapcut: {
+    total: '8,743,778',
+    q1: { price: '£85.99',  note: '累積至 Picsart → 31.3%' },
+    q2: { price: '£99.99',  note: '累積至 CapCut → 80.8%' },
+    q3: { price: '£99.99',  note: '累積至 CapCut → 80.8%' },
+  },
+  noCapcut: {
+    total: '4,415,189',
+    q1: { price: '£43.99',  note: '累積至 Lightroom → 32.9%' },
+    q2: { price: '£85.99',  note: '累積至 Picsart → 62.0%' },
+    q3: { price: '£100.00', note: '累積至 Canva → 99.5%' },
+  },
+};
+
+function updateMauPanel() {
+  const el = document.getElementById('mau-explain');
+  if (qmode !== 'mauWeighted') { el.style.display = 'none'; return; }
+  el.style.display = '';
+
+  if (period === 'monthly') {
+    const base = showCapcut ? ALL : ALL.filter(a => a.cat !== 'capcut');
+    const apps = base.filter(a => a.monthly !== null).sort((a,b) => a.monthly - b.monthly);
+    const total = apps.reduce((s,a) => s+a.mau, 0);
+    let cum=0, q1a=null, q2a=null, q3a=null;
+    for(const a of apps){
+      cum += a.mau;
+      if(!q1a && cum >= total*0.25) q1a = { app:a, pct:(cum/total*100).toFixed(1) };
+      if(!q2a && cum >= total*0.50) q2a = { app:a, pct:(cum/total*100).toFixed(1) };
+      if(!q3a && cum >= total*0.75) q3a = { app:a, pct:(cum/total*100).toFixed(1) };
+    }
+    document.getElementById('mau-total').textContent = total.toLocaleString();
+    document.getElementById('mau-q1-price').textContent = q1a ? `£${q1a.app.monthly}` : '—';
+    document.getElementById('mau-q1-note').textContent  = q1a ? `累積至 ${q1a.app.name} → ${q1a.pct}%` : '';
+    document.getElementById('mau-q2-price').textContent = q2a ? `£${q2a.app.monthly}` : '—';
+    document.getElementById('mau-q2-note').textContent  = q2a ? `累積至 ${q2a.app.name} → ${q2a.pct}%` : '';
+    document.getElementById('mau-q3-price').textContent = q3a ? `£${q3a.app.monthly}` : '—';
+    document.getElementById('mau-q3-note').textContent  = q3a ? `累積至 ${q3a.app.name} → ${q3a.pct}%` : '';
+    const fmt = v => Number.isInteger(v*100) && v.toFixed(2).endsWith('0') ? v.toFixed(1) : v.toFixed(2);
+    const sq = computeSimpleQ(apps.map(a => a.monthly));
+    document.getElementById('s-q1').textContent = `£${fmt(sq.q1)}`;
+    document.getElementById('s-q2').textContent = `£${fmt(sq.q2)}`;
+    document.getElementById('s-q3').textContent = `£${fmt(sq.q3)}`;
+    return;
+  }
+
+  // Annual (original logic)
+  const key = showCapcut ? 'withCapcut' : 'noCapcut';
+  const m = MAU_EXPLAIN[key];
+  const qs = Q[key].simple;
+  document.getElementById('mau-total').textContent   = m.total;
+  document.getElementById('mau-q1-price').textContent = m.q1.price;
+  document.getElementById('mau-q1-note').textContent  = m.q1.note;
+  document.getElementById('mau-q2-price').textContent = m.q2.price;
+  document.getElementById('mau-q2-note').textContent  = m.q2.note;
+  document.getElementById('mau-q3-price').textContent = m.q3.price;
+  document.getElementById('mau-q3-note').textContent  = m.q3.note;
+  document.getElementById('s-q1').textContent = `£${qs.q1}`;
+  document.getElementById('s-q2').textContent = `£${qs.q2}`;
+  document.getElementById('s-q3').textContent = `£${qs.q3}`;
+}
+
+// GDP 核心市场资料（PPP 国际元，世界银行 2024；台灣 IMF 2024）
+// 人均 GDP（名目 USD）｜IMF WEO 2026
+const NOMINAL_GDP = [
+  { name:'美国',   gdp:94430, anchor:true,  current:false },
+  { name:'德国',   gdp:65303, anchor:false, current:false },
+  { name:'英国 ★', gdp:61056, anchor:false, current:true  },
+  { name:'法国',   gdp:52083, anchor:false, current:false },
+  { name:'台灣',   gdp:42103, anchor:false, current:false },
+  { name:'韓国',   gdp:37412, anchor:false, current:false },
+  { name:'日本',   gdp:35703, anchor:false, current:false },
+  { name:'泰国',   gdp:8105,  anchor:false, current:false },
+  { name:'印尼',   gdp:5362,  anchor:false, current:false },
+  { name:'印度',   gdp:2813,  anchor:false, current:false },
+];
+const US_NOMINAL = 94430;
+
+// Big Mac Index（USD）｜The Economist 2026
+const BIGMAC = [
+  { name:'美国',   price:6.12, anchor:true,  current:false },
+  { name:'德国',   price:7.31, anchor:false, current:false },
+  { name:'英国 ★', price:7.08, anchor:false, current:true  },
+  { name:'法国',   price:7.37, anchor:false, current:false },
+  { name:'台灣',   price:2.47, anchor:false, current:false },
+  { name:'韓国',   price:3.74, anchor:false, current:false },
+  { name:'日本',   price:3.03, anchor:false, current:false },
+  { name:'泰国',   price:4.30, anchor:false, current:false },
+  { name:'印尼',   price:2.52, anchor:false, current:false },
+  { name:'印度',   price:2.51, anchor:false, current:false },
+];
+const US_BIGMAC = 6.12;
+
+let showCapcut = false;
+let qmode = 'simple';
+let period = 'annual';
+let priceChart = null;
+let discountChart = null;
+let scatterChart = null;
+
+function getPriceForPeriod(app) {
+  return period === 'monthly' ? app.monthly : app.price;
+}
+function computeSimpleQ(sortedPrices) {
+  const n = sortedPrices.length;
+  if (n < 2) return { q1: sortedPrices[0]||0, q2: sortedPrices[0]||0, q3: sortedPrices[0]||0 };
+  const pct = p => { const L = p*(n-1), lo=Math.floor(L), hi=Math.ceil(L); return lo===hi ? sortedPrices[lo] : sortedPrices[lo]+(L-lo)*(sortedPrices[hi]-sortedPrices[lo]); };
+  return { q1:pct(0.25), q2:pct(0.5), q3:pct(0.75) };
+}
+function computeMauWeightedQ(apps) {
+  const sorted = [...apps].sort((a,b) => getPriceForPeriod(a)-getPriceForPeriod(b));
+  const total = sorted.reduce((s,a) => s+a.mau, 0);
+  const findQ = t => { let cum=0; for(const a of sorted){cum+=a.mau; if(cum>=t*total) return getPriceForPeriod(a);} return getPriceForPeriod(sorted[sorted.length-1]); };
+  return { q1:findQ(0.25), q2:findQ(0.5), q3:findQ(0.75) };
+}
+
+function setPeriod(p, btn) {
+  period = p;
+  document.querySelectorAll('[data-period]').forEach(b => {
+    b.classList.toggle('active', b.dataset.period === p);
+  });
+  rebuildPrice();
+  rebuildScatter();
+}
+
+function rebuildDiscount() {
+  const labelBars = DISC.reduce((acc, d, idx) => {
+    if (d.cat === 'own' || d.cat === 'meitu')
+      acc.push({ idx, color: d.cat === 'own' ? '#E91E8C' : '#D4500A' });
+    return acc;
+  }, []);
+
+  if (discountChart) discountChart.destroy();
+  discountChart = new Chart(document.getElementById('discountChart'), {
+    type: 'bar',
+    plugins: [makeDiscPlugin(labelBars, DISC)],
+    data: {
+      labels: DISC.map(d => d.name),
+      datasets: [{
+        data: DISC.map(d => d.savings),
+        backgroundColor: DISC.map(d =>
+          d.cat === 'own'   ? COL.own(0.85)   :
+          d.cat === 'meitu' ? COL.meitu(0.85) : COL.other(0.7)
+        ),
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { top: 22 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => {
+          const d = DISC[ctx.dataIndex];
+          return [`年比月省：${ctx.raw}%`, `MAU：${d.mau.toLocaleString()}`];
+        }}},
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        y: {
+          min: 20, max: 72,
+          title: { display: true, text: '省下比例 (%)', font: { size: 11 } },
+          grid: { color: '#F5F5F5' },
+          ticks: { callback: v => v + '%' }
+        }
+      }
+    }
+  });
+}
+
+function setCapcut(val, btn) {
+  showCapcut = val;
+  document.querySelectorAll('#grp-capcut .toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  rebuildPrice();
+}
+function setQMode(mode, btn) {
+  qmode = mode;
+  document.querySelectorAll('#grp-qmode .toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  rebuildPrice();
+}
+
+function makePricePlugin(qLines, labelBars, apps) {
+  // Closure-based plugin: Q values are captured at creation time, guaranteed correct
+  // Pre-compute top-5 MAU indices for annotation
+  // Map from app index → MAU rank (1 = highest)
+  const top5Map = new Map(
+    apps
+      .map((a, i) => ({ i, mau: a.mau }))
+      .sort((a, b) => b.mau - a.mau)
+      .slice(0, 5)
+      .map((a, rank) => [a.i, rank + 1])
+  );
+
+  function fmtMAU(mau) {
+    if (mau >= 1000000) return (mau / 1000000).toFixed(1) + 'M';
+    if (mau >= 1000)    return Math.round(mau / 1000) + 'K';
+    return String(mau);
+  }
+
+  return {
+    id: 'priceBarLocal',
+    afterDatasetsDraw(chart) {
+      const { ctx, scales: { x }, chartArea: { top, bottom } } = chart;
+      const h = bottom - top;
+      const labelYs = [top + h * 0.12, top + h * 0.50, top + h * 0.88];
+      const meta = chart.getDatasetMeta(0);
+
+      qLines.forEach(({ value, color, label }, i) => {
+        const xPx = x.getPixelForValue(value);
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(xPx, top);
+        ctx.lineTo(xPx, bottom);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([6, 4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.font = 'bold 10px -apple-system,sans-serif';
+        const tw = ctx.measureText(label).width;
+        const lx = xPx + 4, ly = labelYs[i];
+        pillRect(ctx, lx, ly - 9, tw + 12, 18, 4);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.fillStyle = 'white';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(label, lx + 6, ly);
+        ctx.restore();
+      });
+
+      // Top-5 MAU labels at bar tips
+      apps.forEach((app, idx) => {
+        const rank = top5Map.get(idx);
+        if (rank === undefined) return;
+        const bar = meta.data[idx];
+        if (!bar) return;
+        const label = `#${rank}  ${fmtMAU(app.mau)} MAU`;
+        ctx.save();
+        ctx.font = '10px -apple-system,sans-serif';
+        ctx.fillStyle = 'rgba(80,80,80,0.8)';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(label, bar.x + 6, bar.y);
+        ctx.restore();
+      });
+
+      // £price labels for own/meitu
+      labelBars.forEach(({ idx, color }) => {
+        const bar = meta.data[idx];
+        if (!bar) return;
+        const value = chart.data.datasets[0].data[idx];
+        ctx.save();
+        ctx.font = 'bold 11px -apple-system,sans-serif';
+        ctx.fillStyle = color;
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(`£${value}`, bar.x + 6, bar.y);
+        ctx.restore();
+      });
+    }
+  };
+}
+
+function rebuildPrice() {
+  const base = showCapcut ? ALL : ALL.filter(a => a.cat !== 'capcut');
+  const apps = base.filter(a => getPriceForPeriod(a) !== null)
+    .sort((a, b) => getPriceForPeriod(a) - getPriceForPeriod(b));
+
+  const prices = apps.map(a => getPriceForPeriod(a));
+  const simpleQ = computeSimpleQ(prices);
+  const mauQ = computeMauWeightedQ(apps);
+  const q = qmode === 'simple' ? simpleQ : mauQ;
+
+  const qLines = [
+    { value: q.q1, color: '#4CAF50', label: `Q1  £${q.q1.toFixed(2)}` },
+    { value: q.q2, color: '#FF9800', label: `Q2  £${q.q2.toFixed(2)}` },
+    { value: q.q3, color: '#F44336', label: `Q3  £${q.q3.toFixed(2)}` },
+  ];
+  const labelBars = apps.reduce((acc, app, idx) => {
+    if (app.cat === 'own' || app.cat === 'meitu')
+      acc.push({ idx, color: app.cat === 'own' ? '#E91E8C' : '#D4500A' });
+    return acc;
+  }, []);
+
+  const pLabel = period === 'monthly' ? '月订阅' : '年订阅';
+  const titleEl = document.getElementById('price-chart-title');
+  const subEl = document.getElementById('price-chart-sub');
+  if (titleEl) titleEl.textContent = `竞品${pLabel}定价分布`;
+  if (subEl) subEl.textContent = `依${pLabel}价由低到高排序｜垂直线为四分位基准`;
+
+  updateMauPanel();
+  if (priceChart) priceChart.destroy();
+  priceChart = new Chart(document.getElementById('priceChart'), {
+    type: 'bar',
+    plugins: [makePricePlugin(qLines, labelBars, apps)],
+    data: {
+      labels: apps.map(a => a.name),
+      datasets: [{
+        data: apps.map(a => getPriceForPeriod(a)),
+        backgroundColor: apps.map(a => COL[a.cat === 'capcut' ? 'other' : a.cat](0.85)),
+        borderColor: apps.map(a => COL[a.cat === 'capcut' ? 'other' : a.cat](1)),
+        borderWidth: 1, borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 90 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const app = apps[ctx.dataIndex];
+              return [`${pLabel}：£${ctx.raw}`, `MAU：${app.mau.toLocaleString()}`];
+            }
+          }
+        },
+      },
+      scales: {
+        x: {
+          title: { display: true, text: `${pLabel}（GBP）`, font: { size: 12 } },
+          grid: { color: '#F5F5F5' }
+        },
+        y: {
+          ticks: { font: { size: 12 } },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+}
+
+// Scatter — 四象限（X分界£50，Y分界100K MAU）
+const QUADS = [
+  { label:'高滲透・低定价', sub:'大 MAU × 低价', xSide:'left',  ySide:'top',    color:'rgba(76,175,80,0.06)',   textColor:'#388E3C' },
+  { label:'品质溢价',       sub:'大 MAU × 高价', xSide:'right', ySide:'top',    color:'rgba(255,152,0,0.06)',   textColor:'#E65100' },
+  { label:'市场摸索',       sub:'小 MAU × 低价', xSide:'left',  ySide:'bottom', color:'rgba(33,150,243,0.06)',  textColor:'#1565C0' },
+  { label:'利基高端',       sub:'小 MAU × 高价', xSide:'right', ySide:'bottom', color:'rgba(156,39,176,0.06)', textColor:'#6A1B9A' },
+];
+
+function makeQuadrantPlugin(xBoundary) {
+  return {
+    id: 'quadrant_' + xBoundary,
+    beforeDatasetsDraw(chart) {
+      const { ctx, scales: { x, y }, chartArea: { left, right, top, bottom } } = chart;
+      const xDiv = x.getPixelForValue(xBoundary);
+      const yDiv = y.getPixelForValue(100000);
+
+      QUADS.forEach(({ label, sub, xSide, ySide, color, textColor }) => {
+        const qLeft   = xSide === 'left'   ? left : xDiv;
+        const qRight  = xSide === 'left'   ? xDiv : right;
+        const qTop    = ySide === 'top'    ? top  : yDiv;
+        const qBottom = ySide === 'top'    ? yDiv : bottom;
+
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.fillRect(qLeft, qTop, qRight - qLeft, qBottom - qTop);
+
+        const lx = xSide === 'left' ? qLeft + 10 : qRight - 10;
+        const ly = ySide === 'top'  ? qTop + 10  : qBottom - 28;
+        ctx.textAlign = xSide === 'left' ? 'left' : 'right';
+        ctx.font = 'bold 11px -apple-system,sans-serif';
+        ctx.fillStyle = textColor;
+        ctx.textBaseline = 'top';
+        ctx.fillText(label, lx, ly);
+        ctx.font = '10px -apple-system,sans-serif';
+        ctx.fillStyle = textColor.replace(')', ',0.6)').replace('rgb', 'rgba');
+        ctx.fillText(sub, lx, ly + 14);
+        ctx.restore();
+      });
+
+      // 分界线
+      ctx.save();
+      ctx.strokeStyle = 'rgba(0,0,0,0.13)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath(); ctx.moveTo(xDiv, top);  ctx.lineTo(xDiv, bottom); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(left, yDiv); ctx.lineTo(right, yDiv);  ctx.stroke();
+      ctx.setLineDash([]);
+
+      // 分界线标签
+      ctx.font = '10px -apple-system,sans-serif';
+      ctx.fillStyle = 'rgba(0,0,0,0.35)';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+      ctx.fillText(`£${xBoundary}`, xDiv, top - 2);
+      ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      ctx.fillText('100K', right + 4, yDiv);
+      ctx.restore();
+    },
+    afterDatasetsDraw(chart) {
+      // 在自家 & 美图旗下的点旁标名称
+      const { ctx, scales: { x, y } } = chart;
+      ctx.save();
+      ctx.font = 'bold 10px -apple-system,sans-serif';
+      ctx.textBaseline = 'middle';
+      chart.data.datasets.forEach(ds => {
+        if (ds.label !== 'BeautyCam' && ds.label !== '美图旗下') return;
+        ds.data.forEach(pt => {
+          const px = x.getPixelForValue(pt.x);
+          const py = y.getPixelForValue(pt.y);
+          ctx.fillStyle = ds.label === 'BeautyCam' ? '#E91E8C' : '#D4500A';
+          ctx.textAlign = 'left';
+          ctx.fillText(pt.n, px + (ds.label === 'BeautyCam' ? 10 : 7), py);
+        });
+      });
+      ctx.restore();
+    }
+  };
+}
+
+function rebuildScatter() {
+  const priceKey = period === 'monthly' ? 'monthly' : 'price';
+  const xBoundary = period === 'monthly' ? 8 : 50;
+  const xLabel = period === 'monthly' ? '月订阅（GBP）' : '年订阅（GBP）';
+  const filterApps = (...cats) => ALL.filter(a => cats.includes(a.cat) && a[priceKey] !== null);
+
+  if (scatterChart) scatterChart.destroy();
+  scatterChart = new Chart(document.getElementById('scatterChart'), {
+    type: 'scatter',
+    plugins: [makeQuadrantPlugin(xBoundary)],
+    data: {
+      datasets: [
+        { label:'BeautyCam',
+          data: filterApps('own').map(a=>({x:a[priceKey], y:a.mau, n:a.name})),
+          backgroundColor: COL.own(0.9), pointRadius:12, pointHoverRadius:14 },
+        { label:'美图旗下',
+          data: filterApps('meitu').map(a=>({x:a[priceKey], y:a.mau, n:a.name})),
+          backgroundColor: COL.meitu(0.85), pointRadius:8, pointHoverRadius:10 },
+        { label:'CapCut',
+          data: filterApps('capcut').map(a=>({x:a[priceKey], y:a.mau, n:a.name})),
+          backgroundColor: COL.capcut(0.85), pointRadius:8, pointHoverRadius:10 },
+        { label:'其他',
+          data: filterApps('other').map(a=>({x:a[priceKey], y:a.mau, n:a.name})),
+          backgroundColor: COL.other(0.75), pointRadius:6, pointHoverRadius:8 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 36, top: 16 } },
+      plugins: {
+        tooltip: { callbacks: { label: ctx => `${ctx.raw.n}：£${ctx.raw.x} | MAU ${ctx.raw.y.toLocaleString()}` } },
+        legend: { position:'bottom', labels:{ font:{size:11}, boxWidth:10, padding:12 } }
+      },
+      scales: {
+        x: { title:{ display:true, text:xLabel, font:{size:11} }, grid:{color:'#F5F5F5'} },
+        y: {
+          type:'logarithmic',
+          title:{ display:true, text:'MAU（对数）', font:{size:11} },
+          grid:{ color:'#F5F5F5' },
+          ticks:{ callback: v => v>=1000000?(v/1000000).toFixed(1)+'M': v>=1000?(v/1000).toFixed(0)+'K':v }
+        }
+      }
+    }
+  });
+}
+
+rebuildPrice();
+rebuildScatter();
+rebuildDiscount();
+
+// ── Module 1: 人均 GDP（名目）橫条图 ──
+(function buildNominalGdpChart() {
+  const sorted = [...NOMINAL_GDP].sort((a, b) => b.gdp - a.gdp);
+  new Chart(document.getElementById('nominalGdpChart'), {
+    type: 'bar',
+    data: {
+      labels: sorted.map(m => m.name),
+      datasets: [{
+        data: sorted.map(m => m.gdp),
+        backgroundColor: sorted.map(m =>
+          m.current ? 'rgba(21,101,192,0.85)' : m.anchor ? 'rgba(84,110,122,0.7)' : 'rgba(176,190,197,0.6)'
+        ),
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 50 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => {
+          const m = sorted[ctx.dataIndex];
+          const pct = ((m.gdp / US_NOMINAL) * 100).toFixed(1);
+          return [`$${m.gdp.toLocaleString()}`, `vs 美国：${pct}%`];
+        }}},
+      },
+      scales: {
+        x: {
+          title: { display: true, text: '名目 GDP per capita（USD）', font: { size: 11 } },
+          grid: { color: '#F5F5F5' },
+          ticks: { callback: v => '$' + (v/1000).toFixed(0) + 'K' }
+        },
+        y: { ticks: { font: { size: 12 } }, grid: { display: false } }
+      }
+    },
+    plugins: [{
+      id: 'nominalLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales: { x } } = chart;
+        const meta = chart.getDatasetMeta(0);
+        meta.data.forEach((bar, i) => {
+          const m = sorted[i];
+          const pct = ((m.gdp / US_NOMINAL) * 100).toFixed(1) + '%';
+          ctx.save();
+          ctx.font = (m.current ? 'bold ' : '') + '10px -apple-system,sans-serif';
+          ctx.fillStyle = m.current ? '#1565C0' : '#999';
+          ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+          ctx.fillText(pct, x.getPixelForValue(m.gdp) + 5, bar.y);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+})();
+
+// ── Module 2: Big Mac Index 橫条图 ──
+(function buildBigmacChart() {
+  const sorted = [...BIGMAC].sort((a, b) => b.price - a.price);
+  new Chart(document.getElementById('bigmacChart'), {
+    type: 'bar',
+    data: {
+      labels: sorted.map(m => m.name),
+      datasets: [{
+        data: sorted.map(m => m.price),
+        backgroundColor: sorted.map(m =>
+          m.current ? 'rgba(21,101,192,0.85)' : m.anchor ? 'rgba(84,110,122,0.7)' : 'rgba(176,190,197,0.6)'
+        ),
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 55 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => {
+          const m = sorted[ctx.dataIndex];
+          const diff = ((m.price - US_BIGMAC) / US_BIGMAC * 100);
+          const sign = diff > 0 ? '+' : '';
+          return [`$${m.price.toFixed(2)}`, m.anchor ? '基准' : `vs 美国：${sign}${diff.toFixed(0)}%`];
+        }}},
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Big Mac 售价（USD）', font: { size: 11 } },
+          grid: { color: '#F5F5F5' },
+          ticks: { callback: v => '$' + v.toFixed(1) }
+        },
+        y: { ticks: { font: { size: 12 } }, grid: { display: false } }
+      }
+    },
+    plugins: [{
+      id: 'bigmacLocal',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales: { x }, chartArea: { top, bottom } } = chart;
+        // US reference line
+        const xRef = x.getPixelForValue(US_BIGMAC);
+        ctx.save();
+        ctx.beginPath(); ctx.moveTo(xRef, top); ctx.lineTo(xRef, bottom);
+        ctx.strokeStyle = 'rgba(84,110,122,0.55)'; ctx.lineWidth = 1.5; ctx.setLineDash([5, 4]); ctx.stroke(); ctx.setLineDash([]);
+        ctx.font = 'bold 10px -apple-system,sans-serif';
+        ctx.fillStyle = 'rgba(84,110,122,0.8)'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+        ctx.fillText('US', xRef, top + 2);
+        ctx.restore();
+        // +/- % labels at bar tips
+        const meta = chart.getDatasetMeta(0);
+        meta.data.forEach((bar, i) => {
+          const m = sorted[i];
+          if (m.anchor) return;
+          const diff = ((m.price - US_BIGMAC) / US_BIGMAC * 100);
+          const sign = diff > 0 ? '+' : '';
+          const label = sign + diff.toFixed(0) + '%';
+          const color = m.current ? '#1565C0' : diff > 0 ? '#E65100' : '#546E7A';
+          ctx.save();
+          ctx.font = (m.current ? 'bold ' : '') + '10px -apple-system,sans-serif';
+          ctx.fillStyle = color; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+          ctx.fillText(label, x.getPixelForValue(m.price) + 5, bar.y);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+})();
+
+// ── 快速总览（渲染至 header） ──
+(function buildSummary() {
+  const OWN_MONTHLY     = 6.99;
+  const OWN_MONTHLY_REC = 6.99;
+  const OWN_ANNUAL_REC  = 37.99;
+
+  const own       = ALL.find(a => a.cat === 'own');
+  const appsNoCap = ALL.filter(a => a.cat !== 'capcut');
+
+  // ① MAU 排名（含 CapCut）
+  const byMauAll = [...ALL].sort((a, b) => b.mau - a.mau);
+  const mauRank  = byMauAll.findIndex(a => a.cat === 'own') + 1;
+
+  // ② 年订阅排名（全部 app，由高到低，#1 = 最貴）
+  const byPrice   = [...ALL].sort((a, b) => b.price - a.price);
+  const priceRank = byPrice.findIndex(a => a.cat === 'own') + 1;
+
+  // ③ 定价象限维度（只显示维度，不显示象限名称）
+  const priceDim = own.price < 50     ? '低价' : '高价';
+  const mauDim   = own.mau   > 100000 ? '高 MAU' : '低 MAU';
+
+  // ④ 四分位区间（显示介于哪个百分位，不显示 Discount 等标签）
+  function qRangeLabel(price, q) {
+    if (price < q.q1) return '< Q1';
+    if (price < q.q2) return 'Q1 ~ Q2';
+    if (price < q.q3) return 'Q2 ~ Q3';
+    return '> Q3';
+  }
+  function qBoundSub(price, q) {
+    if (price < q.q1) return `Q1 = £${q.q1}`;
+    if (price < q.q2) return `Q1 £${q.q1} – Q2 £${q.q2}`;
+    if (price < q.q3) return `Q2 £${q.q2} – Q3 £${q.q3}`;
+    return `Q3 = £${q.q3}`;
+  }
+  const simpleBound = qRangeLabel(own.price, Q.withCapcut.simple);
+  const simpleSub   = qBoundSub(own.price, Q.withCapcut.simple);
+  const mauBound    = qRangeLabel(own.price, Q.withCapcut.mauWeighted);
+  const mauSub      = qBoundSub(own.price, Q.withCapcut.mauWeighted);
+
+  // ⑤ 市场类型（World Bank 名目 GDP 固定门槛，跨市场通用）
+  const UK_NOMINAL = 61056;
+  function marketType(gdp) {
+    if (gdp > 13845) return { label:'高所得市场',  code:'HIC',  color:'#90CAF9' };
+    if (gdp > 4466)  return { label:'中上所得市场', code:'UMIC', color:'#A5D6A7' };
+    if (gdp > 1146)  return { label:'中下所得市场', code:'LMIC', color:'#FFCC80' };
+    return                  { label:'低所得市场',   code:'LIC',  color:'#EF9A9A' };
+  }
+  const mtype = marketType(UK_NOMINAL);
+
+  // ⑥ 折扣偏移
+  const savingsBefore = (OWN_MONTHLY - own.price / 12) / OWN_MONTHLY * 100;
+  const savingsAfter  = (OWN_MONTHLY_REC - OWN_ANNUAL_REC / 12) / OWN_MONTHLY_REC * 100;
+
+  // ── Render: 8 指标（深色 header 主题）──
+  const metrics = [
+    { label:'年订阅（现）',           value:`£${own.price}`,           sub:`建议 £${OWN_ANNUAL_REC} (+11.77%)`,                              size:20 },
+    { label:'月订阅（现）',           value:`£${OWN_MONTHLY}`,         sub:'建议维持',                                                       size:20 },
+    { label:'MAU / 定价象限',         value:`${priceDim} × ${mauDim}`, sub:'X=£50、Y=100K 分界',                                             size:14 },
+    { label:'MAU 排名',               value:`#${mauRank}`,             sub:`/ ${ALL.length} 款`,                                             size:22 },
+    { label:'年订阅价格排名',          value:`#${priceRank}`,           sub:`/ ${ALL.length} 款（#1 = 最贵）`,                                  size:22 },
+    { label:'市场价格四分位（简单）',   value:simpleBound,               sub:simpleSub,                                                        size:17, accent:'#EF9A9A' },
+    { label:'市场价格四分位（MAU加权）',value:mauBound,                  sub:mauSub,                                                           size:17, accent:'#EF9A9A' },
+    { label:'市场类型',               value:mtype.label,               sub:`人均 GDP $${UK_NOMINAL.toLocaleString()}，超过高所得门槛 $13,845`, size:13, accent:mtype.color },
+  ];
+
+  document.getElementById('summary-metrics').innerHTML = metrics.map(m => `
+    <div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:13px 15px;">
+      <div style="font-size:10px; color:rgba(255,255,255,0.5); margin-bottom:4px; letter-spacing:0.2px; text-transform:uppercase;">${m.label}</div>
+      <div style="font-size:${m.size}px; font-weight:700; color:${m.accent || 'white'}; line-height:1.2; margin-bottom:2px;">${m.value}</div>
+      <div style="font-size:10px; color:rgba(255,255,255,0.4);">${m.sub}</div>
+    </div>
+  `).join('');
+
+})();
+</script>
+</body>
+</html>
