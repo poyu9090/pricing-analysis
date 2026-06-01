@@ -13,7 +13,7 @@
 **步驟一**：Clone 此 repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pricing-analysis-skill.git
+git clone https://github.com/poyu9090/pricing-analysis.git
 ```
 
 **步驟二**：把以下 prompt 整段貼給 Claude Code，它會完成所有設定：
